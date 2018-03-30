@@ -188,11 +188,11 @@ public class RTextAreaUI extends BasicTextAreaUI {
 		// Load the keymap we'll be using (it's saved by
 		// JTextComponent.addKeymap).
 		Keymap map = JTextComponent.getKeymap(RTEXTAREA_KEYMAP_NAME);
-		if (map==null) {
+		//if (map==null) {
 			Keymap parent = JTextComponent.getKeymap(JTextComponent.DEFAULT_KEYMAP);
 			map = JTextComponent.addKeymap(RTEXTAREA_KEYMAP_NAME, parent);
 			map.setDefaultAction(new RTextAreaEditorKit.DefaultKeyTypedAction());
-		}
+		//}
 
 		return map;
 
@@ -288,10 +288,10 @@ public class RTextAreaUI extends BasicTextAreaUI {
 		// Get the UIManager-cached action map; if this is the first
 		// RTextArea created, create the action map and cache it.
 		ActionMap map = (ActionMap)UIManager.get(getActionMapName());
-		if (map==null) {
+		//if (map==null) {
 			map = createRTextAreaActionMap();
 			UIManager.put(getActionMapName(), map);
-		}
+		//}
 
 		ActionMap componentMap = new ActionMapUIResource();
 		componentMap.put("requestFocus", new FocusAction());
@@ -316,10 +316,10 @@ public class RTextAreaUI extends BasicTextAreaUI {
 	protected InputMap getRTextAreaInputMap() {
 		InputMap map = new InputMapUIResource();
 		InputMap shared = (InputMap)UIManager.get(SHARED_INPUT_MAP_NAME);
-		if (shared==null) {
+		//if (shared==null) {
 			shared = new RTADefaultInputMap();
 			UIManager.put(SHARED_INPUT_MAP_NAME, shared);
-		}
+		//}
 		//KeyStroke[] keys = shared.allKeys();
 		//for (int i=0; i<keys.length; i++)
 		//	System.err.println(keys[i] + " -> " + shared.get(keys[i]));
