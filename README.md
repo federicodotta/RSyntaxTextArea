@@ -12,6 +12,10 @@ For more information, visit [http://bobbylight.github.io/RSyntaxTextArea/](http:
 Available in the [Maven Central repository](http://search.maven.org/#search%7Cga%7C1%7Crsyntaxtextarea%20jar) (`com.fifesoft:rsyntaxtextarea:XXX`).
 SNAPSHOT builds of the in-development, unreleased version are hosted on [Sonatype](https://oss.sonatype.org/content/repositories/snapshots/com/fifesoft/rsyntaxtextarea/).
 
+# Branch "burp-plugin" (Federico Dotta)
+
+The branch "burp-plugin" contains some editing to make the library work when used in a Burp Suite plugin. In that situation, when loading, unloading and reloading the plugin, the RSyntaxTextArea does not accept keyboard input anymore. With these modifications the RSyntaxTextArea works correctly also in this particular situation. Use at your own risk: the modified code has not been deeply tested!
+
 # Building
 
 RSyntaxTextArea uses [Gradle](http://gradle.org/) to build.  To compile, run
